@@ -184,4 +184,10 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  <!--appharbor needs this...-->
+  <PropertyGroup>
+    <PostBuildEvent>if not exist "$(WebProjectOutputDir)\bin\Roslyn" md "$(WebProjectOutputDir)\bin\Roslyn"
+start /MIN xcopy /s /y /R "$(OutDir)roslyn\*.*" "$(WebProjectOutputDir)\bin\Roslyn"
+</PostBuildEvent>
+  </PropertyGroup>
 </Project>
