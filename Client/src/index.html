@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Collaborative Drawing</title>
+    <meta name="description" content="A collaborative drawing app">
+    <meta name="keywords" content="drawing, collaborative, app"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!--build:css-->
+    <link rel="stylesheet" href="css/vendors/bootstrap.css"/>
+    <link rel="stylesheet" href="css/main.css"/>
+    <!--endbuild-->
+</head>
+<body>
+
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <a class="navbar-brand" href="#">Collaborative Drawing</a>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+            <li class="navbar-text">Users online in this canvas: <span id="connected-users">0</span></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container">
+    <canvas id="myCanvas" width="1024" height="768"></canvas>
+</div>
+
+<div class="navbar navbar-default navbar-fixed-bottom" role="navigation">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+    </div>
+    <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav toolbar">
+            <li>
+                <button class="btn btn-default btn-pencil" data-linewidth="1">
+                    <span class="glyphicon glyphicon-pencil gi-extra-small"></span>
+                </button>
+            </li>
+            <li>
+                <button class="btn btn-default btn-pencil" data-linewidth="3">
+                    <span class="glyphicon glyphicon-pencil gi-small"></span>
+                </button>
+            </li>
+            <li>
+                <button class="btn btn-default btn-pencil" data-linewidth="6">
+                    <span class="glyphicon glyphicon-pencil"></span>
+                </button>
+            </li>
+        </ul>
+
+        <ul class="nav navbar-nav toolbar">
+            <li>
+                <button class="btn btn-default btn-color">
+                    <span class="glyphicon glyphicon-tint"></span>
+                </button>
+            </li>
+            <li>
+                <button class="btn btn-default btn-color">
+                    <span class="glyphicon glyphicon-tint gi-red"></span>
+                </button>
+            </li>
+            <li>
+                <button class="btn btn-default btn-color">
+                    <span class="glyphicon glyphicon-tint gi-blue"></span>
+                </button>
+            </li>
+            <li>
+                <button class="btn btn-default btn-color">
+                    <span class="glyphicon glyphicon-tint gi-green"></span>
+                </button>
+            </li>
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right toolbar">
+            <li>
+                <button id="new-canvas" class="btn btn-primary">New Canvas</button>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<!--build:js-->
+<script src="js/vendors/jquery-1.11.3.min.js"></script>
+<script src="js/vendors/jquery.signalr-2.2.0.min.js"></script>
+<script src="js/vendors/bootstrap.min.js"></script>
+<script src="js/vendors/bootbox.min.js"></script>
+<script src="js/vendors/EventEmitter.min.js"></script>
+<script src="js/serverhub.js"></script>
+<script src="js/drawing-surface.js"></script>
+<script src="js/main.js"></script>
+<!--endbuild-->
+
+</body>
+</html>
