@@ -24,7 +24,6 @@ app.ServerHub = (function() {
     self.start = function(canvasId) {
         self.drawingHub.qs = {canvasId: canvasId};
         self.drawingHub.start().done(self.onConnected);
-        console.log("connecting to: " + canvasId);
     };
 
     self.stop = function() {
