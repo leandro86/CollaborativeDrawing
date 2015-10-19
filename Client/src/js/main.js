@@ -118,7 +118,9 @@ $(document).ready(function() {
 
         self.onNewCanvasRequested = function() {
             bootbox.confirm("Close this canvas and create a new one?", function(result) {
-                    location.hash = self.generateRandomCanvasId();
+                    if (result) {
+                        location.hash = self.generateRandomCanvasId();
+                    }
                 }
             );
         };
