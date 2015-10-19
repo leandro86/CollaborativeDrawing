@@ -77,6 +77,8 @@ $(document).ready(function() {
         };
 
         self.setInitialState = function(lines) {
+            surface.clear();
+
             $.each(lines, function(i, line) {
                 self.drawLine(line);
             });

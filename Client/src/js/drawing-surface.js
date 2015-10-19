@@ -24,6 +24,10 @@ $(document).ready(function() {
             self.ctx.stroke();
         };
 
+        self.clear = function() {
+            self.ctx.clearRect(0, 0, canvas.width, canvas.height);
+        };
+
         self.getMousePosition = function(e) {
             var rect = canvas.getBoundingClientRect();
 
@@ -58,6 +62,7 @@ $(document).ready(function() {
 
         return {
             drawLine: self.drawLine,
+            clear: self.clear,
             addListener: self.addListener
         };
     });
